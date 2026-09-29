@@ -10,17 +10,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --tinta:#1A1A1A;
-  --arena:#FAF6EF;
-  --arena2:#F3ECE0;
+  --tinta:#17202B;
+  --turquesa:#0E7C8A;
+  --turquesa2:#14A3B5;
+  --mar:#0F6B8C;
   --naranja:#E85D2A;
   --naranja2:#F28C38;
-  --mar:#0F6B8C;
   --limon:#F2B705;
-  --verde:#2E7D4F;
+  --verde:#2E9E4F;
+  --arena:#FBF6ED;
+  --arena2:#F4EBDD;
   --blanco:#FFFFFF;
-  --gris:#6B6B6B;
-  --borde:#E8DFD0;
+  --gris:#5D6B74;
+  --borde:#E6E0D3;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -28,45 +30,51 @@ body{font-family:'Inter',sans-serif;background:var(--arena);color:var(--tinta);l
 h1,h2,h3{font-family:'Bebas Neue',sans-serif;letter-spacing:.5px;font-weight:400}
 img{display:block;max-width:100%}
 
-/* ===== NAVBAR ===== */
-nav{position:sticky;top:0;z-index:100;background:rgba(250,246,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--borde)}
+/* NAVBAR */
+nav{position:sticky;top:0;z-index:100;background:rgba(251,246,237,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--borde)}
 .nav-inner{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--tinta)}
-.nav-logo img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--naranja)}
-.nav-logo .t{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:1px}
+.nav-logo img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--turquesa)}
+.nav-logo .t{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:1px}
 .nav-logo .t span{color:var(--naranja)}
-.nav-cta{background:var(--verde);color:#fff;text-decoration:none;font-weight:600;font-size:.85rem;padding:9px 18px;border-radius:30px;transition:.2s}
-.nav-cta:hover{background:#256b42;transform:translateY(-1px)}
+.nav-cta{background:var(--verde);color:#fff;text-decoration:none;font-weight:600;font-size:.85rem;padding:10px 18px;border-radius:30px;transition:.2s}
+.nav-cta:hover{transform:translateY(-1px);}
+.nav-cart{position:relative;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--turquesa)}
+.nav-cart .b{position:absolute;top:-6px;right:-6px;background:var(--naranja);color:#fff;font-size:.65rem;font-weight:700;min-width:18px;height:18px;border-radius:50%;display:none;align-items:center;justify-content:center}
+.nav-cart .b.on{display:flex}
 
-/* ===== HERO ===== */
-.hero{position:relative;background:linear-gradient(160deg,#1A1A1A 0%,#2A2A2A 60%,#3A2A1A 100%);color:#fff;overflow:hidden}
-.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(242,183,5,.12),transparent 50%)}
-.hero-inner{max-width:1080px;margin:0 auto;padding:72px 24px 64px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;z-index:2}
-.hero-txt .kicker{font-size:.8rem;letter-spacing:3px;text-transform:uppercase;color:var(--limon);font-weight:600;margin-bottom:14px}
+/* HERO */
+.hero{position:relative;background:linear-gradient(150deg,#0A2A33 0%,#0E4A5C 45%,#11606E 100%);color:#fff;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(circle at 15% 80%,rgba(242,183,5,.15),transparent 45%),
+  radial-gradient(circle at 85% 20%,rgba(20,163,181,.22),transparent 50%),
+  radial-gradient(circle at 60% 60%,rgba(232,93,42,.12),transparent 40%)}
+.hero-inner{max-width:1080px;margin:0 auto;padding:76px 24px 68px;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;position:relative;z-index:2}
+.hero-txt .kicker{font-size:.8rem;letter-spacing:3px;text-transform:uppercase;color:var(--limon);font-weight:700;margin-bottom:14px}
 .hero-txt h1{font-size:clamp(3rem,7vw,4.6rem);line-height:.95;text-transform:uppercase}
 .hero-txt h1 span{color:var(--naranja2)}
-.hero-txt .sub{font-size:1.15rem;color:#D8D0C0;margin:18px 0 26px;max-width:440px}
+.hero-txt .sub{font-size:1.15rem;color:#d6e5ea;margin:18px 0 28px;max-width:440px}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:30px;font-weight:600;font-size:.95rem;text-decoration:none;transition:.2s}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:30px;font-weight:600;font-size:.95rem;text-decoration:none;transition:.2s;cursor:pointer}
 .btn-wa{background:var(--verde);color:#fff}
-.btn-wa:hover{background:#256b42;transform:translateY(-1px)}
-.btn-ghost{border:1.5px solid rgba(255,255,255,.4);color:#fff}
+.btn-wa:hover{transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.45);color:#fff}
 .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
-.hero-img{border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.15);aspect-ratio:1/1;max-width:420px;justify-self:end}
+.hero-img{border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.5);border:3px solid rgba(242,183,5,.35);aspect-ratio:1/1;max-width:430px;justify-self:end}
 .hero-img img{width:100%;height:100%;object-fit:cover}
 
-/* ===== SECCIONES ===== */
+/* SECCIONES */
 .section{max-width:1080px;margin:0 auto;padding:64px 24px}
 .sec-head{text-align:center;margin-bottom:40px}
-.sec-head .kicker{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--naranja);font-weight:700;margin-bottom:8px}
+.sec-head .kicker{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--turquesa);font-weight:700;margin-bottom:8px}
 .sec-head h2{font-size:clamp(2rem,4vw,2.8rem);text-transform:uppercase}
 .sec-head p{color:var(--gris);max-width:520px;margin:10px auto 0}
 
-/* ===== MENU TOSTADAS ===== */
+/* TOSTADAS */
 .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--blanco);border:1px solid var(--borde);border-radius:16px;overflow:hidden;transition:.25s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.1)}
-.card-img{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--arena2)}
+.card{background:var(--blanco);border:1px solid var(--borde);border-radius:18px;overflow:hidden;transition:.25s;box-shadow:0 4px 12px rgba(0,0,0,.05)}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(10,42,51,.12)}
+.card-img{position:relative;aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,#EAF4F5,#F3EBDD)}
 .card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .card:hover .card-img img{transform:scale(1.05)}
 .card-price{position:absolute;top:12px;right:12px;background:var(--limon);color:var(--tinta);font-weight:700;font-size:.9rem;padding:5px 12px;border-radius:20px;box-shadow:0 2px 6px rgba(0,0,0,.2)}
@@ -76,37 +84,62 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,246,239,.92);backdrop-
 .card-add{width:100%;background:var(--naranja);color:#fff;border:none;padding:11px;border-radius:10px;font-weight:600;font-size:.9rem;cursor:pointer;transition:.2s}
 .card-add:hover{background:var(--naranja2)}
 
-/* ===== BEBIDAS ===== */
+/* BEBIDAS */
 .drinks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.drink{background:var(--blanco);border:1px solid var(--borde);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px}
-.drink-img{aspect-ratio:3/4;border-radius:10px;overflow:hidden;background:var(--arena2)}
+.drink{background:var(--blanco);border:1px solid var(--borde);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;box-shadow:0 3px 10px rgba(0,0,0,.04)}
+.drink-img{aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:linear-gradient(160deg,#EAF4F5,#F3EBDD)}
 .drink-img img{width:100%;height:100%;object-fit:cover}
 .drink .d-name{font-weight:700;font-size:1rem}
 .drink .d-desc{font-size:.8rem;color:var(--gris)}
-.drink .d-price{font-weight:700;color:var(--mar);font-size:1.05rem}
-.drink select{width:100%;padding:9px;border:1px solid var(--borde);border-radius:8px;font-family:inherit;font-size:.9rem;background:var(--arena)}
+.drink .d-price{font-weight:700;color:var(--turquesa);font-size:1.05rem}
+.drink select{width:100%;padding:9px;border:1px solid var(--borde);border-radius:8px;font-family:inherit;font-size:.9rem;background:var(--arena);color:var(--tinta)}
 .drink .qty-row{display:flex;align-items:center;justify-content:space-between;margin-top:4px}
-.qty-btn{width:30px;height:30px;border:none;border-radius:50%;background:var(--mar);color:#fff;font-size:1rem;font-weight:700;cursor:pointer}
+.qty-btn{width:30px;height:30px;border:none;border-radius:50%;background:var(--turquesa);color:#fff;font-size:1rem;font-weight:700;cursor:pointer}
+.qty-btn:hover{background:var(--turquesa2)}
 .qty-btn.minus{background:var(--tinta)}
 .qty-val{font-weight:700;min-width:24px;text-align:center}
 
-/* ===== UBICACION ===== */
+/* UBICACION */
 .loc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.loc{background:var(--blanco);border:1px solid var(--borde);border-radius:14px;padding:22px;display:flex;gap:14px;align-items:flex-start}
-.loc .ic{font-size:1.6rem}
+.loc{background:linear-gradient(160deg,var(--blanco),#F2F8F8);border:1px solid var(--borde);border-radius:16px;padding:24px;display:flex;gap:14px;align-items:flex-start}
+.loc .ic{font-size:1.7rem}
 .loc h3{font-size:1.2rem;text-transform:uppercase}
 .loc p{font-size:.88rem;color:var(--gris);margin-top:4px}
-.loc .badge{display:inline-block;background:var(--verde);color:#fff;font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:6px;vertical-align:middle}
+.loc .badge{display:inline-block;background:var(--verde);color:#fff;font-size:.68rem;font-weight:700;padding:2px 9px;border-radius:20px;margin-left:6px;vertical-align:middle}
 
-/* ===== CART BAR ===== */
-.cart{position:fixed;bottom:0;left:0;right:0;background:var(--tinta);color:#fff;padding:14px 24px;display:none;justify-content:space-between;align-items:center;box-shadow:0 -4px 16px rgba(0,0,0,.3);z-index:200}
+/* CART BAR */
+.cart{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(90deg,#0A2A33,#0E4A5C);color:#fff;padding:14px 24px;display:none;justify-content:space-between;align-items:center;box-shadow:0 -4px 16px rgba(0,0,0,.3);z-index:200}
 .cart.visible{display:flex}
 .cart-total{font-weight:700;font-size:1.05rem}
-.cart-total span{color:var(--limon)}
+.cart-total span{color:var(--limon);font-size:1.2rem}
 .order-btn{background:var(--verde);color:#fff;border:none;padding:12px 24px;border-radius:30px;font-weight:700;font-size:.95rem;cursor:pointer;transition:.2s}
-.order-btn:hover{background:#256b42}
+.order-btn:hover{background:#258a42;transform:translateY(-1px)}
 
-footer{text-align:center;padding:40px 24px;font-size:.8rem;color:var(--gris);border-top:1px solid var(--borde);background:var(--arena2)}
+/* MODAL */
+.modal{position:fixed;inset:0;background:rgba(10,42,51,.6);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:300;padding:20px}
+.modal.visible{display:flex}
+.modal-box{background:var(--blanco);border-radius:20px;max-width:500px;width:100%;max-height:90vh;overflow-y:auto;padding:28px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.modal-box h3{font-size:1.6rem;text-transform:uppercase;color:var(--turquesa);margin-bottom:16px;text-align:center}
+.modal-close{float:right;background:none;border:none;font-size:1.7rem;color:var(--gris);cursor:pointer;line-height:1}
+.pedido-lista{list-style:none;margin:0 0 16px;padding:0;border-top:1px solid var(--borde)}
+.pedido-lista li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--borde);font-size:.9rem}
+.pedido-lista li .item{color:var(--tinta);font-weight:500}
+.pedido-lista li .line{color:var(--gris)}
+.pedido-total{font-family:'Bebas Neue';font-size:1.6rem;letter-spacing:.5px;color:var(--naranja);text-align:right;margin-bottom:20px}
+.opt-label{font-size:.85rem;font-weight:700;color:var(--gris);margin:16px 0 8px;text-transform:uppercase;letter-spacing:1px}
+.opt-opts{display:flex;flex-direction:column;gap:10px}
+.opt{border:2px solid var(--borde);border-radius:12px;padding:14px;cursor:pointer;transition:.2s;font-size:.92rem;display:flex;gap:10px;align-items:center}
+.opt.selected{border-color:var(--turquesa);background:#F0F8F9}
+.opt .rad{width:18px;height:18px;border-radius:50%;border:2px solid var(--borde);flex-shrink:0;position:relative}
+.opt.selected .rad{border-color:var(--turquesa)}
+.opt.selected .rad::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--turquesa)}
+.opt-info{background:var(--arena);border-radius:10px;padding:12px 14px;font-size:.85rem;color:var(--gris);margin-top:14px;line-height:1.6}
+.opt-info strong{color:var(--tinta)}
+.text-input{width:100%;padding:11px;border:1px solid var(--borde);border-radius:10px;font-family:inherit;font-size:.9rem;margin-top:8px;background:var(--arena)}
+.btn-confirmar{width:100%;background:var(--verde);color:#fff;border:none;padding:14px;border-radius:14px;font-weight:700;font-size:1rem;cursor:pointer;transition:.2s;margin-top:18px}
+.btn-confirmar:hover{background:#258a42;transform:translateY(-1px)}
+
+footer{text-align:center;padding:40px 24px;font-size:.82rem;color:var(--gris);border-top:1px solid var(--borde);background:linear-gradient(160deg,#F4EBDD,#FBF6ED)}
 
 @media(max-width:820px){
   .hero-inner{grid-template-columns:1fr;padding:48px 20px;gap:28px}
@@ -125,7 +158,7 @@ footer{text-align:center;padding:40px 24px;font-size:.8rem;color:var(--gris);bor
       <img src="assets/logo.jpg" alt="El Que Cevichón">
       <span class="t">El Que <span>Cevichón</span></span>
     </a>
-    <a class="nav-cta" href="https://wa.me/527772111895" target="_blank">Pedir por WhatsApp</a>
+    <button class="nav-cart" onclick="abrirModal()">🛒<span class="b" id="navBadge">0</span></button>
   </div>
 </nav>
 
@@ -137,13 +170,13 @@ footer{text-align:center;padding:40px 24px;font-size:.8rem;color:var(--gris);bor
       <h1>El Que<br><span>Cevichón</span></h1>
       <p class="sub">Ceviche, aguachile y salpicón sobre tostada crujiente. Hecho al momento, en Cuernavaca.</p>
       <div class="hero-ctas">
-        <a class="btn btn-wa" href="https://wa.me/527772111895" target="_blank">📱 Pedir ahora</a>
+        <button class="btn btn-wa" onclick="document.getElementById('menu').scrollIntoView()">📱 Armar mi pedido</button>
         <a class="btn btn-ghost" href="#menu">Ver menú</a>
       </div>
     </div>
     <div class="hero-img">
-          <img src="assets/logo.jpg" alt="El Que Cevichón — logo">
-        </div>
+      <img src="assets/logo.jpg" alt="El Que Cevichón — logo">
+    </div>
   </div>
 </header>
 
@@ -186,59 +219,59 @@ footer{text-align:center;padding:40px 24px;font-size:.8rem;color:var(--gris);bor
 <section class="section" style="padding-top:0">
   <div class="sec-head">
     <div class="kicker">Para acompañar</div>
-    <h2>Bebidas</h2>
+    <h2>Bebidas preparadas</h2>
   </div>
   <div class="drinks">
-      <div class="drink">
-        <div class="drink-img"><img src="assets/bebida-sangria.jpg" alt="Sangría preparada"></div>
-        <div><div class="d-name">Sangría preparada</div><div class="d-desc">½ litro o 1 litro</div></div>
-        <select id="sz-b1"><option value="60">½ litro · $60</option><option value="100">1 litro · $100</option></select>
-        <div class="qty-row"><span class="d-price" id="p-b1">$60</span><div><button class="qty-btn minus" onclick="adj('b1',-1)">−</button><span class="qty-val" id="q-b1">0</span><button class="qty-btn" onclick="adj('b1',1)">+</button></div></div>
-      </div>
-      <div class="drink">
-        <div class="drink-img"><img src="assets/bebida-rusa.jpg" alt="Rusa preparada"></div>
-        <div><div class="d-name">Rusa preparada</div><div class="d-desc">½ litro o 1 litro</div></div>
-        <select id="sz-b2"><option value="60">½ litro · $60</option><option value="100">1 litro · $100</option></select>
-        <div class="qty-row"><span class="d-price" id="p-b2">$60</span><div><button class="qty-btn minus" onclick="adj('b2',-1)">−</button><span class="qty-val" id="q-b2">0</span><button class="qty-btn" onclick="adj('b2',1)">+</button></div></div>
-      </div>
-      <div class="drink">
-        <div class="drink-img"><img src="assets/bebida-clamato.jpg" alt="Clamato preparado"></div>
-        <div><div class="d-name">Clamato preparado</div><div class="d-desc">½ litro o 1 litro</div></div>
-        <select id="sz-b3"><option value="60">½ litro · $60</option><option value="100">1 litro · $100</option></select>
-        <div class="qty-row"><span class="d-price" id="p-b3">$60</span><div><button class="qty-btn minus" onclick="adj('b3',-1)">−</button><span class="qty-val" id="q-b3">0</span><button class="qty-btn" onclick="adj('b3',1)">+</button></div></div>
-      </div>
+    <div class="drink">
+      <div class="drink-img"><img src="assets/bebida-sangria.jpg" alt="Sangría preparada"></div>
+      <div><div class="d-name">Sangría preparada</div><div class="d-desc">½ litro o 1 litro</div></div>
+      <select id="sz-b1"><option value="60">½ litro · $60</option><option value="100">1 litro · $100</option></select>
+      <div class="qty-row"><span class="d-price" id="p-b1">$60</span><div><button class="qty-btn minus" onclick="adj('b1',-1)">−</button><span class="qty-val" id="q-b1">0</span><button class="qty-btn" onclick="adj('b1',1)">+</button></div></div>
     </div>
-  </section>
-
-  <!-- REFRESCOS Y AGUAS -->
-  <section class="section" style="padding-top:0">
-    <div class="sec-head">
-      <div class="kicker">Para refrescar</div>
-      <h2>Refrescos y aguas</h2>
+    <div class="drink">
+      <div class="drink-img"><img src="assets/bebida-rusa.jpg" alt="Rusa preparada"></div>
+      <div><div class="d-name">Rusa preparada</div><div class="d-desc">½ litro o 1 litro</div></div>
+      <select id="sz-b2"><option value="60">½ litro · $60</option><option value="100">1 litro · $100</option></select>
+      <div class="qty-row"><span class="d-price" id="p-b2">$60</span><div><button class="qty-btn minus" onclick="adj('b2',-1)">−</button><span class="qty-val" id="q-b2">0</span><button class="qty-btn" onclick="adj('b2',1)">+</button></div></div>
     </div>
-    <div class="drinks">
-      <div class="drink">
-        <div><div class="d-name">Refresco de botella</div><div class="d-desc">600 ml · Jarrito tamarindo, Jarrito limón, Ameyal kiwi, Coca-Cola zero, Coca-Cola</div></div>
-        <div class="qty-row"><span class="d-price">$40</span><div><button class="qty-btn minus" onclick="adj('r1',-1)">−</button><span class="qty-val" id="q-r1">0</span><button class="qty-btn" onclick="adj('r1',1)">+</button></div></div>
-      </div>
-      <div class="drink">
-        <div><div class="d-name">Agua embotellada</div><div class="d-desc">Agua natural</div></div>
-        <div class="qty-row"><span class="d-price">$20</span><div><button class="qty-btn minus" onclick="adj('r2',-1)">−</button><span class="qty-val" id="q-r2">0</span><button class="qty-btn" onclick="adj('r2',1)">+</button></div></div>
-      </div>
-          </div>
-        </section>
+    <div class="drink">
+      <div class="drink-img"><img src="assets/bebida-clamato.jpg" alt="Clamato preparado"></div>
+      <div><div class="d-name">Clamato preparado</div><div class="d-desc">½ litro o 1 litro</div></div>
+      <select id="sz-b3"><option value="60">½ litro · $60</option><option value="100">1 litro · $100</option></select>
+      <div class="qty-row"><span class="d-price" id="p-b3">$60</span><div><button class="qty-btn minus" onclick="adj('b3',-1)">−</button><span class="qty-val" id="q-b3">0</span><button class="qty-btn" onclick="adj('b3',1)">+</button></div></div>
+    </div>
+  </div>
+</section>
 
-      <!-- UBICACION -->
-      <section class="section" style="padding-top:0">
+<!-- REFRESCOS Y AGUAS -->
+<section class="section" style="padding-top:0">
+  <div class="sec-head">
+    <div class="kicker">Para refrescar</div>
+    <h2>Refrescos y aguas</h2>
+  </div>
+  <div class="drinks">
+    <div class="drink">
+      <div><div class="d-name">Refresco de botella</div><div class="d-desc">600 ml · Jarrito tamarindo, Jarrito limón, Ameyal kiwi, Coca-Cola zero, Coca-Cola</div></div>
+      <div class="qty-row"><span class="d-price">$40</span><div><button class="qty-btn minus" onclick="adj('r1',-1)">−</button><span class="qty-val" id="q-r1">0</span><button class="qty-btn" onclick="adj('r1',1)">+</button></div></div>
+    </div>
+    <div class="drink">
+      <div><div class="d-name">Agua embotellada</div><div class="d-desc">Agua natural</div></div>
+      <div class="qty-row"><span class="d-price">$20</span><div><button class="qty-btn minus" onclick="adj('r2',-1)">−</button><span class="qty-val" id="q-r2">0</span><button class="qty-btn" onclick="adj('r2',1)">+</button></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- UBICACION -->
+<section class="section" style="padding-top:0">
   <div class="sec-head">
     <div class="kicker">Dónde estamos</div>
     <h2>Encuéntranos</h2>
   </div>
   <div class="loc-grid">
     <div class="loc">
-          <span class="ic">📍</span>
-          <div><h3>Las Brisas</h3><p>Entrada al Fracc. Las Brisas, Cuernavaca</p></div>
-        </div>
+      <span class="ic">📍</span>
+      <div><h3>Las Brisas</h3><p>Entrada al Fracc. Las Brisas, Cuernavaca</p></div>
+    </div>
     <div class="loc">
       <span class="ic">📍</span>
       <div><h3>Forum Jacarandas <span class="badge">PRONTO</span></h3><p>Próximamente</p></div>
@@ -246,10 +279,44 @@ footer{text-align:center;padding:40px 24px;font-size:.8rem;color:var(--gris);bor
   </div>
 </section>
 
-<!-- CART -->
+<!-- CART BAR -->
 <div class="cart" id="cart">
-  <div class="cart-total">Total: <span id="cartTotal">$0</span></div>
-  <button class="order-btn" onclick="enviarPedido()">Pedir por WhatsApp</button>
+  <div class="cart-total">Total: <span id="cartTotal">$0</span> · <span id="cartCount">0</span> productos</div>
+  <button class="order-btn" onclick="abrirModal()">Revisar pedido</button>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="cerrarModal()">×</button>
+    <h3>Tu pedido</h3>
+    <ul class="pedido-lista" id="pedidoLista"></ul>
+    <div class="pedido-total" id="pedidoTotal">$0</div>
+
+    <div class="opt-label">¿Cómo quieres recibirlo?</div>
+    <div class="opt-opts">
+      <div class="opt selected" onclick="selEntrega('domicilio')" id="opt-domicilio">
+        <span class="rad"></span><span>🛵 A domicilio (indica tu dirección, abajo)</span>
+      </div>
+      <div class="opt" onclick="selEntrega('local')" id="opt-local">
+        <span class="rad"></span><span>🏪 Recoger en el local (Las Brisas)</span>
+      </div>
+    </div>
+    <input class="text-input" id="dirInput" style="display:none" placeholder="Escribe tu dirección (calle, núm., colonia, referencia)">
+
+    <div class="opt-label">Forma de pago</div>
+    <div class="opt-opts">
+      <div class="opt selected" onclick="selPago('efectivo')" id="opt-efectivo">
+        <span class="rad"></span><span>💵 Efectivo contraentrega</span>
+      </div>
+      <div class="opt" onclick="selPago('transferencia')" id="opt-transferencia">
+        <span class="rad"></span><span>🏦 Transferencia</span>
+      </div>
+    </div>
+    <div class="opt-info" id="pagoInfo"></div>
+
+    <button class="btn-confirmar" onclick="confirmarPedido()">Enviar pedido por WhatsApp</button>
+  </div>
 </div>
 
 <footer>© 2026 El Que Cevichón · Cuernavaca · ¡El sabor que te hace volver!</footer>
@@ -257,12 +324,13 @@ footer{text-align:center;padding:40px 24px;font-size:.8rem;color:var(--gris);bor
 <script>
 const PRECIOS = { t1:50, t2:50, t3:50, b1:60, b2:60, b3:60, r1:40, r2:20 };
 const NOMBRES = {
-  t1:'Tostada de Ceviche', t2:'Tostada de Aguachile', t3:'Tostada de Salpicón',
+  t1:'Tostada Ceviche', t2:'Tostada Aguachile', t3:'Tostada Salpicón',
   b1:'Sangría preparada', b2:'Rusa preparada', b3:'Clamato preparado',
-  r1:'Refresco', r2:'Agua embotellada'
+  r1:'Refresco de botella', r2:'Agua embotellada'
 };
 const TAM = { b1:'sz-b1', b2:'sz-b2', b3:'sz-b3' };
 let carrito = { t1:0,t2:0,t3:0, b1:0,b2:0,b3:0, r1:0,r2:0 };
+let entregaSel = 'domicilio', pagoSel = 'efectivo';
 
 function adj(id, d){
   carrito[id]=Math.max(0,carrito[id]+d);
@@ -270,28 +338,81 @@ function adj(id, d){
   if(sz){ PRECIOS[id]=parseInt(document.getElementById(sz).value); document.getElementById('p-'+id).textContent='$'+PRECIOS[id]; }
   render();
 }
-function render(){
+function totalCarrito(){
   let total=0, count=0;
-  for(const k in carrito){ if(carrito[k]>0){ total+=carrito[k]*PRECIOS[k]; count+=carrito[k]; } document.getElementById('q-'+k).textContent=carrito[k]; }
-  document.getElementById('cartTotal').textContent='$'+total;
-  document.getElementById('cart').classList.toggle('visible', count>0);
+  for(const k in carrito){ if(carrito[k]>0){ total+=carrito[k]*PRECIOS[k]; count+=carrito[k]; } }
+  return {total,count};
 }
-function enviarPedido(){
+function render(){
+  const {total,count}=totalCarrito();
+  document.getElementById('cartTotal').textContent='$'+total;
+  document.getElementById('cartCount').textContent=count;
+  document.getElementById('cart').classList.toggle('visible', count>0);
+  const b=document.getElementById('navBadge');
+  b.textContent=count; b.classList.toggle('on', count>0);
+  for(const k in carrito){ document.getElementById('q-'+k).textContent=carrito[k]; }
+}
+function abrirModal(){
+  if(totalCarrito().count===0){ alert('Primero agrega productos a tu pedido.'); return; }
+  let html='';
+  for(const k in carrito){
+    if(carrito[k]>0){
+      const sz=TAM[k];
+      const tam = sz ? ` (${document.getElementById(sz).selectedOptions[0].textContent.split('·')[0].trim()})` : '';
+      html+=`<li><span class="item">${carrito[k]}x ${NOMBRES[k]}${tam}</span><span class="line">$${carrito[k]*PRECIOS[k]}</span></li>`;
+    }
+  }
+  document.getElementById('pedidoLista').innerHTML=html;
+  document.getElementById('pedidoTotal').textContent='$'+totalCarrito().total;
+  selEntrega('domicilio'); selPago('efectivo');
+  document.getElementById('modal').classList.add('visible');
+}
+function cerrarModal(){ document.getElementById('modal').classList.remove('visible'); }
+function selEntrega(e){
+  entregaSel=e;
+  document.getElementById('opt-domicilio').classList.toggle('selected', e==='domicilio');
+  document.getElementById('opt-local').classList.toggle('selected', e==='local');
+  document.getElementById('dirInput').style.display = e==='domicilio' ? 'block' : 'none';
+}
+function selPago(p){
+  pagoSel=p;
+  document.getElementById('opt-efectivo').classList.toggle('selected', p==='efectivo');
+  document.getElementById('opt-transferencia').classList.toggle('selected', p==='transferencia');
+  const info=document.getElementById('pagoInfo');
+  if(p==='transferencia'){
+    info.innerHTML='Paga por transferencia a la cuenta:<br><strong>CLABE: 722969028689169637</strong><br><strong>Titular: Brandon Valle</strong><br>Envía la <strong>captura del comprobante</strong> en este chat para confirmar tu pedido.';
+  } else {
+    info.innerHTML='Paga con <strong>efectivo contraentrega</strong> al recibir tu pedido.';
+  }
+}
+function confirmarPedido(){
   let msg='*Hola, quiero hacer un pedido a El Que Cevichón*%0A%0A';
   let total=0;
   for(const k in carrito){
     if(carrito[k]>0){
       const sz=TAM[k];
-      const detalle = sz ? ` (${document.getElementById(sz).selectedOptions[0].textContent})` : '';
-      msg+=`• ${carrito[k]}x ${NOMBRES[k]}${detalle} — $${carrito[k]*PRECIOS[k]}%0A`;
+      const tam = sz ? ` (${document.getElementById(sz).selectedOptions[0].textContent.split('·')[0].trim()})` : '';
+      msg+=`• ${carrito[k]}x ${NOMBRES[k]}${tam} — $${carrito[k]*PRECIOS[k]}%0A`;
       total+=carrito[k]*PRECIOS[k];
     }
   }
   msg+=`%0A*Total: $${total}*%0A%0A`;
-  msg+=`*Forma de pago:*%0A`;
-  msg+=`1. Efectivo%0A`;
-  msg+=`2. Transferencia%0A%0A`;
-  msg+=`*CLABE (transferencia):*%0A722969028689169637%0A*Titular:* Brandon Valle`;
+  if(entregaSel==='domicilio'){
+    const dir=document.getElementById('dirInput').value.trim();
+    msg+=`*Entrega:* A domicilio%0A`;
+    msg+=`*Dirección:* ${dir||'pendiente de confirmar'}%0A%0A`;
+  } else {
+    msg+=`*Entrega:* Recoger en local (Las Brisas)%0A%0A`;
+  }
+  if(pagoSel==='transferencia'){
+    msg+=`*Forma de pago:* Transferencia%0A`;
+    msg+=`*CLABE:* 722969028689169637%0A`;
+    msg+=`*Titular:* Brandon Valle%0A`;
+    msg+=`*Adjunto captura del comprobante*%0A%0A`;
+  } else {
+    msg+=`*Forma de pago:* Efectivo contraentrega%0A`;
+  }
+  msg+=`*Confirmación:* por favor confirmen disponibilidad y tiempo de entrega.`;
   window.open('https://wa.me/527772111895?text='+msg,'_blank');
 }
 render();
