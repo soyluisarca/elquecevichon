@@ -4,179 +4,255 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>El Que Cevichón — Tostadas y mariscos en Cuernavaca</title>
-<meta name="description" content="El Que Cevichón — Tostadas de ceviche, aguachile y salpicón en Cuernavaca. Pide por WhatsApp, Las Brisas y Forum Jacarandas. ¡El sabor que te hace volver!">
+<meta name="description" content="El Que Cevichón — Tostadas de ceviche, aguachile y salpicón en Cuernavaca. Pide por WhatsApp. Las Brisas y Forum Jacarandas. ¡El sabor que te hace volver!">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --tropical:#FF6B35;      /* naranja/atardecer */
-  --vaquero:#2B2B2B;       /* negro vaquero */
-  --mar:#1B75BC;           /* azul mar */
-  --arena:#FFF8EF;         /* fondo claro */
-  --limon:#FFD23F;         /* amarillo/hibisco */
-  --verde:#2E9E4F;         /* hoja tropical */
+  --tinta:#1A1A1A;
+  --arena:#FAF6EF;
+  --arena2:#F3ECE0;
+  --naranja:#E85D2A;
+  --naranja2:#F28C38;
+  --mar:#0F6B8C;
+  --limon:#F2B705;
+  --verde:#2E7D4F;
+  --blanco:#FFFFFF;
+  --gris:#6B6B6B;
+  --borde:#E8DFD0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;background:var(--arena);color:var(--vaquero);line-height:1.5}
-h1,h2{font-family:'Bebas Neue',sans-serif;letter-spacing:.5px}
-a{color:inherit}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--arena);color:var(--tinta);line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Bebas Neue',sans-serif;letter-spacing:.5px;font-weight:400}
+img{display:block;max-width:100%}
 
-/* HERO */
-header{background:linear-gradient(135deg,#FF6B35,#FF9A3C 55%,#FFD23F);padding:40px 24px;text-align:center;color:#fff;border-bottom:6px solid var(--vaquero)}
-.logo{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,8vw,4rem);line-height:.95;text-transform:uppercase;text-shadow:3px 3px 0 rgba(0,0,0,.25)}
-.logo span{color:var(--vaquero)}
-.sub{font-size:1.1rem;margin-top:8px;font-weight:500;opacity:.95}
-.eslogan{display:inline-block;margin-top:14px;background:var(--vaquero);color:#fff;padding:6px 16px;border-radius:30px;font-size:.9rem;font-weight:600}
+/* ===== NAVBAR ===== */
+nav{position:sticky;top:0;z-index:100;background:rgba(250,246,239,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--borde)}
+.nav-inner{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--tinta)}
+.nav-logo img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--naranja)}
+.nav-logo .t{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:1px}
+.nav-logo .t span{color:var(--naranja)}
+.nav-cta{background:var(--verde);color:#fff;text-decoration:none;font-weight:600;font-size:.85rem;padding:9px 18px;border-radius:30px;transition:.2s}
+.nav-cta:hover{background:#256b42;transform:translateY(-1px)}
 
-/* CONTENEDOR */
-.container{max-width:680px;margin:0 auto;padding:32px 20px 80px}
+/* ===== HERO ===== */
+.hero{position:relative;background:linear-gradient(160deg,#1A1A1A 0%,#2A2A2A 60%,#3A2A1A 100%);color:#fff;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(242,183,5,.12),transparent 50%)}
+.hero-inner{max-width:1080px;margin:0 auto;padding:72px 24px 64px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;z-index:2}
+.hero-txt .kicker{font-size:.8rem;letter-spacing:3px;text-transform:uppercase;color:var(--limon);font-weight:600;margin-bottom:14px}
+.hero-txt h1{font-size:clamp(3rem,7vw,4.6rem);line-height:.95;text-transform:uppercase}
+.hero-txt h1 span{color:var(--naranja2)}
+.hero-txt .sub{font-size:1.15rem;color:#D8D0C0;margin:18px 0 26px;max-width:440px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:30px;font-weight:600;font-size:.95rem;text-decoration:none;transition:.2s}
+.btn-wa{background:var(--verde);color:#fff}
+.btn-wa:hover{background:#256b42;transform:translateY(-1px)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.4);color:#fff}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.hero-img{border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.15)}
+.hero-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
 
-/* CATEGORIA */
-.cat{margin-top:36px}
-.cat-title{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:1px;color:var(--mar);border-bottom:3px solid var(--limon);padding-bottom:6px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.cat-title::before{content:'';width:10px;height:10px;border-radius:50%;background:var(--tropical);display:inline-block}
+/* ===== SECCIONES ===== */
+.section{max-width:1080px;margin:0 auto;padding:64px 24px}
+.sec-head{text-align:center;margin-bottom:40px}
+.sec-head .kicker{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--naranja);font-weight:700;margin-bottom:8px}
+.sec-head h2{font-size:clamp(2rem,4vw,2.8rem);text-transform:uppercase}
+.sec-head p{color:var(--gris);max-width:520px;margin:10px auto 0}
 
-/* ITEM */
-.item{background:#fff;border:1px solid #eee;border-radius:12px;padding:14px 16px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 3px rgba(0,0,0,.05);transition:box-shadow .2s}
-.item:hover{box-shadow:0 4px 12px rgba(0,0,0,.08)}
-.item-r{display:flex;align-items:center;gap:14px}
-.item-name{font-weight:700}
-.item-detail{font-size:.85rem;color:#666;margin-top:2px}
-.price{font-weight:700;color:var(--tropical);white-space:nowrap}
-.add{width:34px;height:34px;border:none;border-radius:50%;background:var(--mar);color:#fff;font-size:1.2rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s}
-.add:hover{background:var(--verde);transform:scale(1.08)}
-.qty{font-weight:700;min-width:20px;text-align:center}
-.minus{background:var(--vaquero)}
+/* ===== MENU TOSTADAS ===== */
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--blanco);border:1px solid var(--borde);border-radius:16px;overflow:hidden;transition:.25s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.1)}
+.card-img{position:relative;aspect-ratio:4/3;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.card:hover .card-img img{transform:scale(1.05)}
+.card-price{position:absolute;top:12px;right:12px;background:var(--limon);color:var(--tinta);font-weight:700;font-size:.9rem;padding:5px 12px;border-radius:20px;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.card-body{padding:18px 20px 20px}
+.card-body h3{font-size:1.4rem;text-transform:uppercase;letter-spacing:.5px}
+.card-body p{font-size:.88rem;color:var(--gris);margin:6px 0 14px}
+.card-add{width:100%;background:var(--naranja);color:#fff;border:none;padding:11px;border-radius:10px;font-weight:600;font-size:.9rem;cursor:pointer;transition:.2s}
+.card-add:hover{background:var(--naranja2)}
 
-/* RESULTADO */
-.cart{position:fixed;bottom:0;left:0;right:0;background:var(--vaquero);color:#fff;padding:14px 20px;display:none;justify-content:space-between;align-items:center;box-shadow:0 -4px 12px rgba(0,0,0,.3)}
+/* ===== BEBIDAS ===== */
+.drinks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.drink{background:var(--blanco);border:1px solid var(--borde);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.drink .d-name{font-weight:700;font-size:1rem}
+.drink .d-desc{font-size:.8rem;color:var(--gris)}
+.drink .d-price{font-weight:700;color:var(--mar);font-size:1.05rem}
+.drink select{width:100%;padding:9px;border:1px solid var(--borde);border-radius:8px;font-family:inherit;font-size:.9rem;background:var(--arena)}
+.drink .qty-row{display:flex;align-items:center;justify-content:space-between;margin-top:4px}
+.qty-btn{width:30px;height:30px;border:none;border-radius:50%;background:var(--mar);color:#fff;font-size:1rem;font-weight:700;cursor:pointer}
+.qty-btn.minus{background:var(--tinta)}
+.qty-val{font-weight:700;min-width:24px;text-align:center}
+
+/* ===== UBICACION ===== */
+.loc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.loc{background:var(--blanco);border:1px solid var(--borde);border-radius:14px;padding:22px;display:flex;gap:14px;align-items:flex-start}
+.loc .ic{font-size:1.6rem}
+.loc h3{font-size:1.2rem;text-transform:uppercase}
+.loc p{font-size:.88rem;color:var(--gris);margin-top:4px}
+.loc .badge{display:inline-block;background:var(--verde);color:#fff;font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:6px;vertical-align:middle}
+
+/* ===== CART BAR ===== */
+.cart{position:fixed;bottom:0;left:0;right:0;background:var(--tinta);color:#fff;padding:14px 24px;display:none;justify-content:space-between;align-items:center;box-shadow:0 -4px 16px rgba(0,0,0,.3);z-index:200}
 .cart.visible{display:flex}
-.cart-total{font-weight:700;font-size:1.1rem}
+.cart-total{font-weight:700;font-size:1.05rem}
 .cart-total span{color:var(--limon)}
-.order-btn{background:var(--verde);color:#fff;border:none;padding:12px 22px;border-radius:30px;font-weight:700;font-size:1rem;cursor:pointer;transition:.15s}
-.order-btn:hover{background:#258a42;transform:scale(1.02)}
+.order-btn{background:var(--verde);color:#fff;border:none;padding:12px 24px;border-radius:30px;font-weight:700;font-size:.95rem;cursor:pointer;transition:.2s}
+.order-btn:hover{background:#256b42}
 
-/* UBICACION */
-.loc{margin-top:40px;background:#fff;border:1px solid #eee;border-radius:12px;padding:20px}
-.loc h3{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--vaquero);margin-bottom:12px;letter-spacing:1px}
-.loc-item{display:flex;gap:10px;margin-bottom:8px;font-size:.95rem}
-.loc-item .ic{font-size:1.2rem}
-.badge{display:inline-block;background:var(--verde);color:#fff;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:6px;vertical-align:middle}
+footer{text-align:center;padding:40px 24px;font-size:.8rem;color:var(--gris);border-top:1px solid var(--borde);background:var(--arena2)}
 
-footer{text-align:center;padding:24px;font-size:.8rem;color:#999}
+@media(max-width:820px){
+  .hero-inner{grid-template-columns:1fr;padding:48px 20px;gap:28px}
+  .menu-grid,.drinks{grid-template-columns:1fr}
+  .loc-grid{grid-template-columns:1fr}
+  .section{padding:48px 20px}
+}
 </style>
 </head>
 <body>
 
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">
+      <img src="assets/logo.jpg" alt="El Que Cevichón">
+      <span class="t">El Que <span>Cevichón</span></span>
+    </a>
+    <a class="nav-cta" href="https://wa.me/527772111895" target="_blank">Pedir por WhatsApp</a>
+  </div>
+</nav>
+
 <!-- HERO -->
-<header>
-  <div class="logo">El Que<br><span>CEVICHÓN</span></div>
-  <div class="sub">Tostadas y mariscos frescos en Cuernavaca</div>
-  <div class="eslogan">¡El sabor que te hace volver!</div>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-txt">
+      <div class="kicker">Tostadas y mariscos frescos</div>
+      <h1>El Que<br><span>Cevichón</span></h1>
+      <p class="sub">Ceviche, aguachile y salpicón sobre tostada crujiente. Hecho al momento, en Cuernavaca.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-wa" href="https://wa.me/527772111895" target="_blank">📱 Pedir ahora</a>
+        <a class="btn btn-ghost" href="#menu">Ver menú</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="assets/tostada-ceviche.jpg" alt="Tostada de ceviche tropical">
+    </div>
+  </div>
 </header>
 
-<div class="container">
-
-  <!-- TOSTADAS -->
-  <div class="cat">
-    <h2 class="cat-title">Tostadas</h2>
-    <div class="item">
-      <div><div class="item-name">Tostada de Ceviche</div></div>
-      <div class="item-r"><span class="price">$50</span><button class="minus" onclick="adj('t1',-1)">−</button><span class="qty" id="q-t1">0</span><button class="add" onclick="adj('t1',1)">+</button></div>
+<!-- MENU TOSTADAS -->
+<section class="section" id="menu">
+  <div class="sec-head">
+    <div class="kicker">Nuestro menú</div>
+    <h2>Tostadas</h2>
+    <p>Elige tus tostadas y arma tu pedido. Cada una $50.</p>
+  </div>
+  <div class="menu-grid">
+    <div class="card">
+      <div class="card-img"><img src="assets/tostada-ceviche.jpg" alt="Tostada de ceviche"><span class="card-price">$50</span></div>
+      <div class="card-body">
+        <h3>Tostada de Ceviche</h3>
+        <p>Camarón fresco, mango, pepino y aguacate.</p>
+        <button class="card-add" onclick="adj('t1',1)">Agregar +</button>
+      </div>
     </div>
-    <div class="item">
-      <div><div class="item-name">Tostada de Aguachile</div></div>
-      <div class="item-r"><span class="price">$50</span><button class="minus" onclick="adj('t2',-1)">−</button><span class="qty" id="q-t2">0</span><button class="add" onclick="adj('t2',1)">+</button></div>
+    <div class="card">
+      <div class="card-img"><img src="assets/tostada-aguachile.jpg" alt="Tostada de aguachile"><span class="card-price">$50</span></div>
+      <div class="card-body">
+        <h3>Tostada de Aguachile</h3>
+        <p>Camarón, pepino, cebolla morada y chile.</p>
+        <button class="card-add" onclick="adj('t2',1)">Agregar +</button>
+      </div>
     </div>
-    <div class="item">
-      <div><div class="item-name">Tostada de Salpicón</div></div>
-      <div class="item-r"><span class="price">$50</span><button class="minus" onclick="adj('t3',-1)">−</button><span class="qty" id="q-t3">0</span><button class="add" onclick="adj('t3',1)">+</button></div>
+    <div class="card">
+      <div class="card-img"><img src="assets/tostada-salpicon.jpg" alt="Tostada de salpicón"><span class="card-price">$50</span></div>
+      <div class="card-body">
+        <h3>Tostada de Salpicón</h3>
+        <p>Res deshebrada, lechuga, tomate y aguacate.</p>
+        <button class="card-add" onclick="adj('t3',1)">Agregar +</button>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- PREPARADAS -->
-  <div class="cat">
-    <h2 class="cat-title">Bebidas preparadas</h2>
-    <div class="item">
-      <div><div class="item-name">Sangría preparada</div>
-      <div class="size">
-        <select class="sel" id="sz-b1">
-          <option value="60">½ litro · $60</option>
-          <option value="100">1 litro · $100</option>
-        </select>
-      </div></div>
-      <div class="item-r"><button class="minus" onclick="adj('b1',-1)">−</button><span class="qty" id="q-b1">0</span><button class="add" onclick="adj('b1',1)">+</button></div>
+<!-- BEBIDAS -->
+<section class="section" style="padding-top:0">
+  <div class="sec-head">
+    <div class="kicker">Para acompañar</div>
+    <h2>Bebidas</h2>
+  </div>
+  <div class="drinks">
+    <div class="drink">
+      <div><div class="d-name">Sangría preparada</div><div class="d-desc">½ litro o 1 litro</div></div>
+      <select id="sz-b1"><option value="60">½ litro · $60</option><option value="100">1 litro · $100</option></select>
+      <div class="qty-row"><span class="d-price" id="p-b1">$60</span><div><button class="qty-btn minus" onclick="adj('b1',-1)">−</button><span class="qty-val" id="q-b1">0</span><button class="qty-btn" onclick="adj('b1',1)">+</button></div></div>
     </div>
-    <div class="item">
-      <div><div class="item-name">Rusa preparada</div>
-      <div class="size">
-        <select class="sel" id="sz-b2">
-          <option value="60">½ litro · $60</option>
-          <option value="100">1 litro · $100</option>
-        </select>
-      </div></div>
-      <div class="item-r"><button class="minus" onclick="adj('b2',-1)">−</button><span class="qty" id="q-b2">0</span><button class="add" onclick="adj('b2',1)">+</button></div>
+    <div class="drink">
+      <div><div class="d-name">Rusa preparada</div><div class="d-desc">½ litro o 1 litro</div></div>
+      <select id="sz-b2"><option value="60">½ litro · $60</option><option value="100">1 litro · $100</option></select>
+      <div class="qty-row"><span class="d-price" id="p-b2">$60</span><div><button class="qty-btn minus" onclick="adj('b2',-1)">−</button><span class="qty-val" id="q-b2">0</span><button class="qty-btn" onclick="adj('b2',1)">+</button></div></div>
     </div>
-    <div class="item">
-      <div><div class="item-name">Clamato preparado</div>
-      <div class="size">
-        <select class="sel" id="sz-b3">
-          <option value="60">½ litro · $60</option>
-          <option value="100">1 litro · $100</option>
-        </select>
-      </div></div>
-      <div class="item-r"><button class="minus" onclick="adj('b3',-1)">−</button><span class="qty" id="q-b3">0</span><button class="add" onclick="adj('b3',1)">+</button></div>
+    <div class="drink">
+      <div><div class="d-name">Clamato preparado</div><div class="d-desc">½ litro o 1 litro</div></div>
+      <select id="sz-b3"><option value="60">½ litro · $60</option><option value="100">1 litro · $100</option></select>
+      <div class="qty-row"><span class="d-price" id="p-b3">$60</span><div><button class="qty-btn minus" onclick="adj('b3',-1)">−</button><span class="qty-val" id="q-b3">0</span><button class="qty-btn" onclick="adj('b3',1)">+</button></div></div>
+    </div>
+    <div class="drink">
+      <div><div class="d-name">Refresco</div><div class="d-desc">Lata o botella</div></div>
+      <div class="qty-row"><span class="d-price">$40</span><div><button class="qty-btn minus" onclick="adj('r1',-1)">−</button><span class="qty-val" id="q-r1">0</span><button class="qty-btn" onclick="adj('r1',1)">+</button></div></div>
+    </div>
+    <div class="drink">
+      <div><div class="d-name">Agua embotellada</div><div class="d-desc">Agua natural</div></div>
+      <div class="qty-row"><span class="d-price">$20</span><div><button class="qty-btn minus" onclick="adj('r2',-1)">−</button><span class="qty-val" id="q-r2">0</span><button class="qty-btn" onclick="adj('r2',1)">+</button></div></div>
     </div>
   </div>
+</section>
 
-  <!-- REFRESCOS -->
-  <div class="cat">
-    <h2 class="cat-title">Refrescos y aguas</h2>
-    <div class="item">
-      <div><div class="item-name">Refresco</div></div>
-      <div class="item-r"><span class="price">$40</span><button class="minus" onclick="adj('r1',-1)">−</button><span class="qty" id="q-r1">0</span><button class="add" onclick="adj('r1',1)">+</button></div>
+<!-- UBICACION -->
+<section class="section" style="padding-top:0">
+  <div class="sec-head">
+    <div class="kicker">Dónde estamos</div>
+    <h2>Encuéntranos</h2>
+  </div>
+  <div class="loc-grid">
+    <div class="loc">
+      <span class="ic">📍</span>
+      <div><h3>Las Brisas</h3><p>Entrada del fraccionamiento, Cuernavaca</p></div>
     </div>
-    <div class="item">
-      <div><div class="item-name">Agua embotellada</div></div>
-      <div class="item-r"><span class="price">$20</span><button class="minus" onclick="adj('r2',-1)">−</button><span class="qty" id="q-r2">0</span><button class="add" onclick="adj('r2',1)">+</button></div>
+    <div class="loc">
+      <span class="ic">📍</span>
+      <div><h3>Forum Jacarandas <span class="badge">PRONTO</span></h3><p>Próximamente</p></div>
     </div>
   </div>
+</section>
 
-  <!-- UBICACION -->
-  <div class="loc">
-    <h3>Encuéntranos</h3>
-    <div class="loc-item"><span class="ic">📍</span> Las Brisas — entrada del fraccionamiento</div>
-    <div class="loc-item"><span class="ic">📍</span> Forum Jacarandas <span class="badge">PRONTO</span></div>
-    <div class="loc-item" style="margin-top:10px"><span class="ic">📱</span> Pedidos al: <strong>777 211 1895</strong></div>
-  </div>
-
-</div>
-
-<!-- BARRA DE PEDIDO -->
+<!-- CART -->
 <div class="cart" id="cart">
   <div class="cart-total">Total: <span id="cartTotal">$0</span></div>
   <button class="order-btn" onclick="enviarPedido()">Pedir por WhatsApp</button>
 </div>
 
-<footer>© 2026 El Que Cevichón · Cuernavaca</footer>
+<footer>© 2026 El Que Cevichón · Cuernavaca · ¡El sabor que te hace volver!</footer>
 
 <script>
-/* Productos del menú pedibles en línea */
 const PRECIOS = { t1:50, t2:50, t3:50, b1:60, b2:60, b3:60, r1:40, r2:20 };
 const NOMBRES = {
-  t1:'Tostada Ceviche', t2:'Tostada Aguachile', t3:'Tostada Salpicón',
+  t1:'Tostada de Ceviche', t2:'Tostada de Aguachile', t3:'Tostada de Salpicón',
   b1:'Sangría preparada', b2:'Rusa preparada', b3:'Clamato preparado',
   r1:'Refresco', r2:'Agua embotellada'
 };
-// tamaño seleccionado por bebida preparada
-const TAM = { b1:{sz:'sz-b1'}, b2:{sz:'sz-b2'}, b3:{sz:'sz-b3'} };
+const TAM = { b1:'sz-b1', b2:'sz-b2', b3:'sz-b3' };
 let carrito = { t1:0,t2:0,t3:0, b1:0,b2:0,b3:0, r1:0,r2:0 };
 
 function adj(id, d){
   carrito[id]=Math.max(0,carrito[id]+d);
-  const t=TAM[id];
-  if(t){ PRECIOS[id]=parseInt(document.getElementById(t.sz).value); }
+  const sz=TAM[id];
+  if(sz){ PRECIOS[id]=parseInt(document.getElementById(sz).value); document.getElementById('p-'+id).textContent='$'+PRECIOS[id]; }
   render();
 }
 function render(){
@@ -190,8 +266,8 @@ function enviarPedido(){
   let total=0;
   for(const k in carrito){
     if(carrito[k]>0){
-      const t=TAM[k];
-      const detalle = t ? ` (${document.getElementById(t.sz).selectedOptions[0].textContent})` : '';
+      const sz=TAM[k];
+      const detalle = sz ? ` (${document.getElementById(sz).selectedOptions[0].textContent})` : '';
       msg+=`• ${carrito[k]}x ${NOMBRES[k]}${detalle} — $${carrito[k]*PRECIOS[k]}%0A`;
       total+=carrito[k]*PRECIOS[k];
     }
