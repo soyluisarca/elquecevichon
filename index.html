@@ -44,49 +44,49 @@ nav{position:sticky;top:0;z-index:100;background:rgba(251,246,237,.93);backdrop-
 .nav-cart .b.on{display:flex}
 
 /* HERO */
-.hero{position:relative;background:linear-gradient(150deg,#0A2A33 0%,#0E4A5C 45%,#11606E 100%);color:#fff;overflow:hidden;padding:44px 24px 20px;text-align:center}
+.hero{position:relative;background:linear-gradient(160deg,#C24E1E 0%,#E85D2A 30%,#F28C38 60%,#F4EBDD 112%);color:#fff;overflow:hidden;padding:48px 24px 34px;text-align:center}
 .hero::before{content:'';position:absolute;inset:0;background:
-  radial-gradient(circle at 15% 80%,rgba(242,183,5,.12),transparent 40%),
-  radial-gradient(circle at 85% 15%,rgba(20,163,181,.2),transparent 45%),
-  radial-gradient(circle at 55% 60%,rgba(232,93,42,.1),transparent 40%)}
+  radial-gradient(circle at 15% 85%,rgba(119,52,20,.35),transparent 42%),
+  radial-gradient(circle at 85% 18%,rgba(255,246,214,.5),transparent 46%),
+  radial-gradient(circle at 50% 55%,rgba(242,183,5,.22),transparent 42%)}
 .hero-banner{position:relative;z-index:2;margin:0 auto}
-.hero-banner img{width:auto;max-height:420px;max-width:94%;margin:0 auto;display:block;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.45);border:3px solid rgba(242,183,5,.3)}
-.hero-ctas{max-width:1080px;margin:20px auto 6px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
+.hero-banner img{width:auto;max-height:400px;max-width:92%;margin:0 auto;display:block;border-radius:18px;box-shadow:0 18px 50px rgba(90,38,10,.45);border:3px solid rgba(255,255,255,.35)}
+.hero-slogan{position:relative;z-index:2;font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:1px;color:#fff;text-shadow:0 3px 14px rgba(120,45,12,.55);margin:10px auto 0}
+.hero-ctas{max-width:1080px;margin:24px auto 6px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:30px;font-weight:600;font-size:.98rem;text-decoration:none;transition:.2s;cursor:pointer}
-.btn-wa{background:var(--verde);color:#fff;box-shadow:0 6px 18px rgba(46,158,79,.4)}
-.btn-wa:hover{transform:translateY(-2px)}
-.btn-ghost{border:1.5px solid rgba(255,255,255,.5);color:#fff;background:rgba(10,42,51,.35)}
-.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.btn-wa{background:var(--naranja);color:#fff;box-shadow:0 6px 18px rgba(232,93,42,.45)}
+.btn-wa:hover{transform:translateY(-2px);background:var(--naranja2)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.9);color:#fff;background:rgba(150,60,20,.28)}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.18)}
 
 /* SECCIONES */
-.section{max-width:1080px;margin:0 auto;padding:64px 24px}
-.sec-head{text-align:center;margin-bottom:40px}
+.section{max-width:1080px;margin:0 auto;padding:72px 24px}
+.sec-head{text-align:center;margin-bottom:44px}
 .sec-head .kicker{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--turquesa);font-weight:700;margin-bottom:8px}
-.sec-head h2{font-size:clamp(2rem,4vw,2.8rem);text-transform:uppercase}
+.sec-head h2{font-size:clamp(2.1rem,4.5vw,3rem);text-transform:uppercase}
 .sec-head p{color:var(--gris);max-width:520px;margin:10px auto 0}
 
 /* TOSTADAS */
 .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--blanco);border:1px solid var(--borde);border-radius:18px;overflow:hidden;transition:.25s;box-shadow:0 4px 12px rgba(0,0,0,.05)}
-.card:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(10,42,51,.12)}
+.card{background:var(--blanco);border:1px solid var(--borde);border-radius:22px;overflow:hidden;transition:.25s;box-shadow:0 6px 18px rgba(10,42,51,.07)}
+.card:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(10,42,51,.14)}
 .card-img{position:relative;aspect-ratio:4/5;overflow:hidden;background:linear-gradient(160deg,#EAF4F5,#F3EBDD)}
 .card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .card:hover .card-img img{transform:scale(1.05)}
-.card-price{position:absolute;top:12px;right:12px;background:var(--limon);color:var(--tinta);font-weight:700;font-size:.9rem;padding:5px 12px;border-radius:20px;box-shadow:0 2px 6px rgba(0,0,0,.2)}
-.card-body{padding:18px 20px 20px}
-.card-body h3{font-size:1.4rem;text-transform:uppercase;letter-spacing:.5px}
-.card-body p{font-size:.88rem;color:var(--gris);margin:6px 0 14px}
-.card-add{width:100%;background:var(--naranja);color:#fff;border:none;padding:11px;border-radius:10px;font-weight:600;font-size:.9rem;cursor:pointer;transition:.2s}
+.card-body{padding:20px 22px 22px}
+.card-body h3{font-size:1.45rem;text-transform:uppercase;letter-spacing:.5px}
+.card-body p{font-size:.88rem;color:var(--gris);margin:6px 0 16px}
+.card-add{width:100%;background:var(--naranja);color:#fff;border:none;padding:12px;border-radius:12px;font-weight:600;font-size:.9rem;cursor:pointer;transition:.2s}
 .card-add:hover{background:var(--naranja2)}
 
 /* BEBIDAS */
 .drinks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.drink{background:var(--blanco);border:1px solid var(--borde);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;box-shadow:0 3px 10px rgba(0,0,0,.04)}
-.drink-img{aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:linear-gradient(160deg,#EAF4F5,#F3EBDD)}
+.drink{background:var(--blanco);border:1px solid var(--borde);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 5px 14px rgba(0,0,0,.05)}
+.drink-img{aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:linear-gradient(160deg,#EAF4F5,#F3EBDD)}
 .drink-img img{width:100%;height:100%;object-fit:cover}
-.drink .d-name{font-weight:700;font-size:1rem}
+.drink .d-name{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:.5px}
 .drink .d-desc{font-size:.8rem;color:var(--gris)}
-.drink .d-price{font-weight:700;color:var(--turquesa);font-size:1.05rem}
+.drink .d-price{font-family:'Bebas Neue',sans-serif;font-weight:400;color:var(--naranja);font-size:1.35rem;letter-spacing:.5px}
 .drink select{width:100%;padding:9px;border:1px solid var(--borde);border-radius:8px;font-family:inherit;font-size:.9rem;background:var(--arena);color:var(--tinta)}
 .drink .qty-row{display:flex;align-items:center;justify-content:space-between;margin-top:4px}
 .qty-btn{width:30px;height:30px;border:none;border-radius:50%;background:var(--turquesa);color:#fff;font-size:1rem;font-weight:700;cursor:pointer}
@@ -179,6 +179,7 @@ footer{text-align:center;padding:40px 24px;font-size:.82rem;color:var(--gris);bo
   <div class="hero-banner">
     <img src="assets/logo.jpg" alt="El Que Cevichón — logo">
   </div>
+  <div class="hero-slogan">¡El sabor que te hace volver!</div>
   <div class="hero-ctas">
     <button class="btn btn-wa" data-act="scrollmenu">📱 Armar mi pedido</button>
     <a class="btn btn-ghost" href="#menu">Ver menú</a>
