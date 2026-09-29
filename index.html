@@ -416,7 +416,7 @@ function selPago(p){
   document.getElementById('opt-transferencia').classList.toggle('selected', p==='transferencia');
   const info=document.getElementById('pagoInfo');
   if(p==='transferencia'){
-    info.innerHTML='Paga por transferencia a la cuenta:<br><strong>CLABE: 722969028689169637</strong><br><strong>Titular: Brandon Valle</strong><br>Envía la <strong>captura del comprobante</strong> en este chat para confirmar tu pedido.';
+    info.innerHTML='Paga por transferencia a la cuenta:<br><strong>Banco: Mercado Pago</strong><br><strong>CLABE: 722969028689169637</strong><br><strong>Titular: Brandon Valle</strong><br>Envía la <strong>captura del comprobante</strong> en este chat para confirmar tu pedido.';
   } else {
     info.innerHTML='Paga con <strong>efectivo contraentrega</strong> al recibir tu pedido.';
   }
@@ -440,6 +440,7 @@ function confirmarPedido(){
   }
   if(pagoSel==='transferencia'){
     msg+=`*Forma de pago:* Transferencia%0A`;
+    msg+=`*Banco:* Mercado Pago%0A`;
     msg+=`*CLABE:* 722969028689169637%0A`;
     msg+=`*Titular:* Brandon Valle%0A`;
     msg+=`*Adjunto captura del comprobante*%0A%0A`;
