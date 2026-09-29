@@ -240,7 +240,14 @@ footer{text-align:center;padding:40px 24px;font-size:.82rem;color:var(--gris);bo
   </div>
   <div class="drinks">
     <div class="drink">
-      <div><div class="d-name">Refresco de botella</div><div class="d-desc">600 ml · Jarrito tamarindo, Jarrito limón, Ameyal kiwi, Coca-Cola zero, Coca-Cola</div></div>
+      <div><div class="d-name">Refresco de botella</div><div class="d-desc">600 ml</div></div>
+      <select id="sz-r1">
+        <option value="40">Jarrito tamarindo · $40</option>
+        <option value="40">Jarrito limón · $40</option>
+        <option value="40">Ameyal kiwi · $40</option>
+        <option value="40">Coca-Cola zero · $40</option>
+        <option value="40">Coca-Cola · $40</option>
+      </select>
       <div class="qty-row"><span class="d-price">$40</span><div><button class="qty-btn minus" onclick="adj('r1',-1)">−</button><span class="qty-val" id="q-r1">0</span><button class="qty-btn" onclick="adj('r1',1)">+</button></div></div>
     </div>
     <div class="drink">
@@ -318,14 +325,14 @@ const NOMBRES = {
   b1:'Sangría preparada', b2:'Rusa preparada', b3:'Clamato preparado',
   r1:'Refresco de botella', r2:'Agua embotellada'
 };
-const TAM = { b1:'sz-b1', b2:'sz-b2', b3:'sz-b3' };
+const TAM = { b1:'sz-b1', b2:'sz-b2', b3:'sz-b3', r1:'sz-r1' };
 let carrito = { t1:0,t2:0,t3:0, b1:0,b2:0,b3:0, r1:0,r2:0 };
 let entregaSel = 'domicilio', pagoSel = 'efectivo';
 
 function adj(id, d){
   carrito[id]=Math.max(0,carrito[id]+d);
   const sz=TAM[id];
-  if(sz){ PRECIOS[id]=parseInt(document.getElementById(sz).value); document.getElementById('p-'+id).textContent='$'+PRECIOS[id]; }
+  if(sz){ PRECIOS[id]=parseInt(document.getElementById(sz).value); const p=document.getElementById('p-'+id); if(p) p.textContent='$'+PRECIOS[id]; }
   render();
 }
 function quitar(id){ adj(id,-1); }
