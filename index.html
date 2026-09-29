@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Que Cevichón — Tostadas y mariscos en Cuernavaca</title>
+<meta name="description" content="El Que Cevichón — Tostadas de ceviche, aguachile y salpicón en Cuernavaca. Pide por WhatsApp, Las Brisas y Forum Jacarandas. ¡El sabor que te hace volver!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tropical:#FF6B35;      /* naranja/atardecer */
+  --vaquero:#2B2B2B;       /* negro vaquero */
+  --mar:#1B75BC;           /* azul mar */
+  --arena:#FFF8EF;         /* fondo claro */
+  --limon:#FFD23F;         /* amarillo/hibisco */
+  --verde:#2E9E4F;         /* hoja tropical */
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--arena);color:var(--vaquero);line-height:1.5}
+h1,h2{font-family:'Bebas Neue',sans-serif;letter-spacing:.5px}
+a{color:inherit}
+
+/* HERO */
+header{background:linear-gradient(135deg,#FF6B35,#FF9A3C 55%,#FFD23F);padding:40px 24px;text-align:center;color:#fff;border-bottom:6px solid var(--vaquero)}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,8vw,4rem);line-height:.95;text-transform:uppercase;text-shadow:3px 3px 0 rgba(0,0,0,.25)}
+.logo span{color:var(--vaquero)}
+.sub{font-size:1.1rem;margin-top:8px;font-weight:500;opacity:.95}
+.eslogan{display:inline-block;margin-top:14px;background:var(--vaquero);color:#fff;padding:6px 16px;border-radius:30px;font-size:.9rem;font-weight:600}
+
+/* CONTENEDOR */
+.container{max-width:680px;margin:0 auto;padding:32px 20px 80px}
+
+/* CATEGORIA */
+.cat{margin-top:36px}
+.cat-title{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:1px;color:var(--mar);border-bottom:3px solid var(--limon);padding-bottom:6px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.cat-title::before{content:'';width:10px;height:10px;border-radius:50%;background:var(--tropical);display:inline-block}
+
+/* ITEM */
+.item{background:#fff;border:1px solid #eee;border-radius:12px;padding:14px 16px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 3px rgba(0,0,0,.05);transition:box-shadow .2s}
+.item:hover{box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.item-r{display:flex;align-items:center;gap:14px}
+.item-name{font-weight:700}
+.item-detail{font-size:.85rem;color:#666;margin-top:2px}
+.price{font-weight:700;color:var(--tropical);white-space:nowrap}
+.add{width:34px;height:34px;border:none;border-radius:50%;background:var(--mar);color:#fff;font-size:1.2rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s}
+.add:hover{background:var(--verde);transform:scale(1.08)}
+.qty{font-weight:700;min-width:20px;text-align:center}
+.minus{background:var(--vaquero)}
+
+/* RESULTADO */
+.cart{position:fixed;bottom:0;left:0;right:0;background:var(--vaquero);color:#fff;padding:14px 20px;display:none;justify-content:space-between;align-items:center;box-shadow:0 -4px 12px rgba(0,0,0,.3)}
+.cart.visible{display:flex}
+.cart-total{font-weight:700;font-size:1.1rem}
+.cart-total span{color:var(--limon)}
+.order-btn{background:var(--verde);color:#fff;border:none;padding:12px 22px;border-radius:30px;font-weight:700;font-size:1rem;cursor:pointer;transition:.15s}
+.order-btn:hover{background:#258a42;transform:scale(1.02)}
+
+/* UBICACION */
+.loc{margin-top:40px;background:#fff;border:1px solid #eee;border-radius:12px;padding:20px}
+.loc h3{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--vaquero);margin-bottom:12px;letter-spacing:1px}
+.loc-item{display:flex;gap:10px;margin-bottom:8px;font-size:.95rem}
+.loc-item .ic{font-size:1.2rem}
+.badge{display:inline-block;background:var(--verde);color:#fff;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:6px;vertical-align:middle}
+
+footer{text-align:center;padding:24px;font-size:.8rem;color:#999}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header>
+  <div class="logo">El Que<br><span>CEVICHÓN</span></div>
+  <div class="sub">Tostadas y mariscos frescos en Cuernavaca</div>
+  <div class="eslogan">¡El sabor que te hace volver!</div>
+</header>
+
+<div class="container">
+
+  <!-- TOSTADAS -->
+  <div class="cat">
+    <h2 class="cat-title">Tostadas</h2>
+    <div class="item">
+      <div><div class="item-name">Tostada de Ceviche</div></div>
+      <div class="item-r"><span class="price">$50</span><button class="minus" onclick="adj('t1',-1)">−</button><span class="qty" id="q-t1">0</span><button class="add" onclick="adj('t1',1)">+</button></div>
+    </div>
+    <div class="item">
+      <div><div class="item-name">Tostada de Aguachile</div></div>
+      <div class="item-r"><span class="price">$50</span><button class="minus" onclick="adj('t2',-1)">−</button><span class="qty" id="q-t2">0</span><button class="add" onclick="adj('t2',1)">+</button></div>
+    </div>
+    <div class="item">
+      <div><div class="item-name">Tostada de Salpicón</div></div>
+      <div class="item-r"><span class="price">$50</span><button class="minus" onclick="adj('t3',-1)">−</button><span class="qty" id="q-t3">0</span><button class="add" onclick="adj('t3',1)">+</button></div>
+    </div>
+  </div>
+
+  <!-- PREPARADAS -->
+  <div class="cat">
+    <h2 class="cat-title">Bebidas preparadas</h2>
+    <div class="item">
+      <div><div class="item-name">Sangría preparada</div>
+      <div class="size">
+        <select class="sel" id="sz-b1">
+          <option value="60">½ litro · $60</option>
+          <option value="100">1 litro · $100</option>
+        </select>
+      </div></div>
+      <div class="item-r"><button class="minus" onclick="adj('b1',-1)">−</button><span class="qty" id="q-b1">0</span><button class="add" onclick="adj('b1',1)">+</button></div>
+    </div>
+    <div class="item">
+      <div><div class="item-name">Rusa preparada</div>
+      <div class="size">
+        <select class="sel" id="sz-b2">
+          <option value="60">½ litro · $60</option>
+          <option value="100">1 litro · $100</option>
+        </select>
+      </div></div>
+      <div class="item-r"><button class="minus" onclick="adj('b2',-1)">−</button><span class="qty" id="q-b2">0</span><button class="add" onclick="adj('b2',1)">+</button></div>
+    </div>
+    <div class="item">
+      <div><div class="item-name">Clamato preparado</div>
+      <div class="size">
+        <select class="sel" id="sz-b3">
+          <option value="60">½ litro · $60</option>
+          <option value="100">1 litro · $100</option>
+        </select>
+      </div></div>
+      <div class="item-r"><button class="minus" onclick="adj('b3',-1)">−</button><span class="qty" id="q-b3">0</span><button class="add" onclick="adj('b3',1)">+</button></div>
+    </div>
+  </div>
+
+  <!-- REFRESCOS -->
+  <div class="cat">
+    <h2 class="cat-title">Refrescos y aguas</h2>
+    <div class="item">
+      <div><div class="item-name">Refresco</div></div>
+      <div class="item-r"><span class="price">$40</span><button class="minus" onclick="adj('r1',-1)">−</button><span class="qty" id="q-r1">0</span><button class="add" onclick="adj('r1',1)">+</button></div>
+    </div>
+    <div class="item">
+      <div><div class="item-name">Agua embotellada</div></div>
+      <div class="item-r"><span class="price">$20</span><button class="minus" onclick="adj('r2',-1)">−</button><span class="qty" id="q-r2">0</span><button class="add" onclick="adj('r2',1)">+</button></div>
+    </div>
+  </div>
+
+  <!-- UBICACION -->
+  <div class="loc">
+    <h3>Encuéntranos</h3>
+    <div class="loc-item"><span class="ic">📍</span> Las Brisas — entrada del fraccionamiento</div>
+    <div class="loc-item"><span class="ic">📍</span> Forum Jacarandas <span class="badge">PRONTO</span></div>
+    <div class="loc-item" style="margin-top:10px"><span class="ic">📱</span> Pedidos al: <strong>777 211 1895</strong></div>
+  </div>
+
+</div>
+
+<!-- BARRA DE PEDIDO -->
+<div class="cart" id="cart">
+  <div class="cart-total">Total: <span id="cartTotal">$0</span></div>
+  <button class="order-btn" onclick="enviarPedido()">Pedir por WhatsApp</button>
+</div>
+
+<footer>© 2026 El Que Cevichón · Cuernavaca</footer>
+
+<script>
+/* Productos del menú pedibles en línea */
+const PRECIOS = { t1:50, t2:50, t3:50, b1:60, b2:60, b3:60, r1:40, r2:20 };
+const NOMBRES = {
+  t1:'Tostada Ceviche', t2:'Tostada Aguachile', t3:'Tostada Salpicón',
+  b1:'Sangría preparada', b2:'Rusa preparada', b3:'Clamato preparado',
+  r1:'Refresco', r2:'Agua embotellada'
+};
+// tamaño seleccionado por bebida preparada
+const TAM = { b1:{sz:'sz-b1'}, b2:{sz:'sz-b2'}, b3:{sz:'sz-b3'} };
+let carrito = { t1:0,t2:0,t3:0, b1:0,b2:0,b3:0, r1:0,r2:0 };
+
+function adj(id, d){
+  carrito[id]=Math.max(0,carrito[id]+d);
+  const t=TAM[id];
+  if(t){ PRECIOS[id]=parseInt(document.getElementById(t.sz).value); }
+  render();
+}
+function render(){
+  let total=0, count=0;
+  for(const k in carrito){ if(carrito[k]>0){ total+=carrito[k]*PRECIOS[k]; count+=carrito[k]; } document.getElementById('q-'+k).textContent=carrito[k]; }
+  document.getElementById('cartTotal').textContent='$'+total;
+  document.getElementById('cart').classList.toggle('visible', count>0);
+}
+function enviarPedido(){
+  let msg='*Hola, quiero hacer un pedido a El Que Cevichón*%0A%0A';
+  let total=0;
+  for(const k in carrito){
+    if(carrito[k]>0){
+      const t=TAM[k];
+      const detalle = t ? ` (${document.getElementById(t.sz).selectedOptions[0].textContent})` : '';
+      msg+=`• ${carrito[k]}x ${NOMBRES[k]}${detalle} — $${carrito[k]*PRECIOS[k]}%0A`;
+      total+=carrito[k]*PRECIOS[k];
+    }
+  }
+  msg+=`%0A*Total: $${total}*`;
+  window.open('https://wa.me/527772111895?text='+msg,'_blank');
+}
+render();
+</script>
+</body>
+</html>
