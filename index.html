@@ -307,15 +307,17 @@ footer{text-align:center;padding:40px 24px;font-size:.82rem;color:var(--gris);bo
     <div class="pedido-total" id="pedidoTotal">$0</div>
 
     <div class="opt-label">¿Cómo quieres recibirlo?</div>
-    <div class="opt-opts">
-      <div class="opt selected" data-act="entrega" data-val="domicilio" id="opt-domicilio">
-        <span class="rad"></span><span>🛵 A domicilio (indica tu dirección, abajo)</span>
-      </div>
-      <div class="opt" data-act="entrega" data-val="local" id="opt-local">
-        <span class="rad"></span><span>🏪 Recoger en el local (Las Brisas)</span>
-      </div>
-    </div>
-    <input class="text-input" id="dirInput" style="display:none" placeholder="Escribe tu dirección (calle, núm., colonia, referencia)">
+        <div class="opt-opts">
+          <div class="opt selected" data-act="entrega" data-val="domicilio" id="opt-domicilio">
+            <span class="rad"></span><span>🛵 A domicilio</span>
+          </div>
+          <div class="opt" data-act="entrega" data-val="local" id="opt-local">
+            <span class="rad"></span><span>🏪 Recoger en el local (Las Brisas)</span>
+          </div>
+        </div>
+        <div class="opt-label" id="dirLabel">Dirección de entrega</div>
+        <input class="text-input" id="dirInput" placeholder="Calle, número, colonia y referencia">
+        <div class="opt-info" id="dirInfo" style="display:none">Recoge tu pedido en el local: Entrada al Fracc. Las Brisas, Cuernavaca.</div>
 
     <div class="opt-label">Forma de pago</div>
     <div class="opt-opts">
@@ -408,7 +410,10 @@ function selEntrega(e){
   entregaSel=e;
   document.getElementById('opt-domicilio').classList.toggle('selected', e==='domicilio');
   document.getElementById('opt-local').classList.toggle('selected', e==='local');
-  document.getElementById('dirInput').style.display = e==='domicilio' ? 'block' : 'none';
+  const esDom = e==='domicilio';
+  document.getElementById('dirLabel').style.display = esDom ? 'block' : 'none';
+  document.getElementById('dirInput').style.display = esDom ? 'block' : 'none';
+  document.getElementById('dirInfo').style.display = esDom ? 'none' : 'block';
 }
 function selPago(p){
   pagoSel=p;
