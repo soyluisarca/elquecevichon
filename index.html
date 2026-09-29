@@ -44,10 +44,14 @@ nav{position:sticky;top:0;z-index:100;background:rgba(251,246,237,.93);backdrop-
 .nav-cart .b.on{display:flex}
 
 /* HERO */
-.hero{position:relative;background:linear-gradient(150deg,#0A2A33 0%,#0E4A5C 45%,#11606E 100%);color:#fff;overflow:hidden;padding:0}
-.hero-banner{width:100%;display:block;line-height:0}
-.hero-banner img{width:100%;height:auto;display:block;object-fit:cover}
-.hero-ctas{max-width:1080px;margin:0 auto;padding:22px 24px 30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
+.hero{position:relative;background:linear-gradient(150deg,#0A2A33 0%,#0E4A5C 45%,#11606E 100%);color:#fff;overflow:hidden;padding:44px 24px 20px;text-align:center}
+.hero::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(circle at 15% 80%,rgba(242,183,5,.12),transparent 40%),
+  radial-gradient(circle at 85% 15%,rgba(20,163,181,.2),transparent 45%),
+  radial-gradient(circle at 55% 60%,rgba(232,93,42,.1),transparent 40%)}
+.hero-banner{position:relative;z-index:2;margin:0 auto}
+.hero-banner img{width:auto;max-height:420px;max-width:94%;margin:0 auto;display:block;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.45);border:3px solid rgba(242,183,5,.3)}
+.hero-ctas{max-width:1080px;margin:20px auto 6px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:30px;font-weight:600;font-size:.98rem;text-decoration:none;transition:.2s;cursor:pointer}
 .btn-wa{background:var(--verde);color:#fff;box-shadow:0 6px 18px rgba(46,158,79,.4)}
 .btn-wa:hover{transform:translateY(-2px)}
@@ -157,7 +161,7 @@ footer{text-align:center;padding:40px 24px;font-size:.82rem;color:var(--gris);bo
 <!-- HERO -->
 <header class="hero">
   <div class="hero-banner">
-    <img src="assets/banner.png" alt="El Que Cevichón — banner">
+    <img src="assets/logo.jpg" alt="El Que Cevichón — logo">
   </div>
   <div class="hero-ctas">
     <button class="btn btn-wa" onclick="document.getElementById('menu').scrollIntoView()">📱 Armar mi pedido</button>
