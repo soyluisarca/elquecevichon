@@ -170,7 +170,7 @@ footer{text-align:center;padding:40px 24px;font-size:.82rem;color:var(--gris);bo
       <img src="assets/logo.jpg" alt="El Que Cevichón">
       <span class="t">El Que <span>Cevichón</span></span>
     </a>
-    <button class="nav-cart" onclick="abrirModal()">🛒<span class="b" id="navBadge">0</span></button>
+    <button class="nav-cart" data-act="abrir">🛒<span class="b" id="navBadge">0</span></button>
   </div>
 </nav>
 
@@ -180,7 +180,7 @@ footer{text-align:center;padding:40px 24px;font-size:.82rem;color:var(--gris);bo
     <img src="assets/logo.jpg" alt="El Que Cevichón — logo">
   </div>
   <div class="hero-ctas">
-    <button class="btn btn-wa" onclick="document.getElementById('menu').scrollIntoView()">📱 Armar mi pedido</button>
+    <button class="btn btn-wa" data-act="scrollmenu">📱 Armar mi pedido</button>
     <a class="btn btn-ghost" href="#menu">Ver menú</a>
   </div>
 </header>
@@ -198,7 +198,7 @@ footer{text-align:center;padding:40px 24px;font-size:.82rem;color:var(--gris);bo
       <div class="card-body">
         <h3>Tostada de Ceviche</h3>
         <p>Camarón fresco, mango, pepino y aguacate.</p>
-        <button class="card-add" onclick="adj('t1',1)">Agregar +</button>
+        <button class="card-add" data-act="sumar" data-id="t1">Agregar +</button>
       </div>
     </div>
     <div class="card">
@@ -206,7 +206,7 @@ footer{text-align:center;padding:40px 24px;font-size:.82rem;color:var(--gris);bo
       <div class="card-body">
         <h3>Tostada de Aguachile</h3>
         <p>Camarón, pepino, cebolla morada y chile.</p>
-        <button class="card-add" onclick="adj('t2',1)">Agregar +</button>
+        <button class="card-add" data-act="sumar" data-id="t2">Agregar +</button>
       </div>
     </div>
     <div class="card">
@@ -214,7 +214,7 @@ footer{text-align:center;padding:40px 24px;font-size:.82rem;color:var(--gris);bo
       <div class="card-body">
         <h3>Tostada de Salpicón</h3>
         <p>Res deshebrada, lechuga, tomate y aguacate.</p>
-        <button class="card-add" onclick="adj('t3',1)">Agregar +</button>
+        <button class="card-add" data-act="sumar" data-id="t3">Agregar +</button>
       </div>
     </div>
   </div>
@@ -231,19 +231,19 @@ footer{text-align:center;padding:40px 24px;font-size:.82rem;color:var(--gris);bo
       <div class="drink-img"><img src="assets/bebida-sangria.jpg" alt="Sangría preparada"></div>
       <div><div class="d-name">Sangría preparada</div><div class="d-desc">½ litro o 1 litro</div></div>
       <select id="sz-b1"><option value="60">½ litro · $60</option><option value="100">1 litro · $100</option></select>
-      <div class="qty-row"><span class="d-price" id="p-b1">$60</span><div><button class="qty-btn minus" onclick="adj('b1',-1)">−</button><span class="qty-val" id="q-b1">0</span><button class="qty-btn" onclick="adj('b1',1)">+</button></div></div>
+      <div class="qty-row"><span class="d-price" id="p-b1">$60</span><div><button class="qty-btn minus" data-act="quitar" data-id="b1">−</button><span class="qty-val" id="q-b1">0</span><button class="qty-btn" data-act="sumar" data-id="b1">+</button></div></div>
     </div>
     <div class="drink">
       <div class="drink-img"><img src="assets/bebida-rusa.jpg" alt="Rusa preparada"></div>
       <div><div class="d-name">Rusa preparada</div><div class="d-desc">½ litro o 1 litro</div></div>
       <select id="sz-b2"><option value="60">½ litro · $60</option><option value="100">1 litro · $100</option></select>
-      <div class="qty-row"><span class="d-price" id="p-b2">$60</span><div><button class="qty-btn minus" onclick="adj('b2',-1)">−</button><span class="qty-val" id="q-b2">0</span><button class="qty-btn" onclick="adj('b2',1)">+</button></div></div>
+      <div class="qty-row"><span class="d-price" id="p-b2">$60</span><div><button class="qty-btn minus" data-act="quitar" data-id="b2">−</button><span class="qty-val" id="q-b2">0</span><button class="qty-btn" data-act="sumar" data-id="b2">+</button></div></div>
     </div>
     <div class="drink">
       <div class="drink-img"><img src="assets/bebida-clamato.jpg" alt="Clamato preparado"></div>
       <div><div class="d-name">Clamato preparado</div><div class="d-desc">½ litro o 1 litro</div></div>
       <select id="sz-b3"><option value="60">½ litro · $60</option><option value="100">1 litro · $100</option></select>
-      <div class="qty-row"><span class="d-price" id="p-b3">$60</span><div><button class="qty-btn minus" onclick="adj('b3',-1)">−</button><span class="qty-val" id="q-b3">0</span><button class="qty-btn" onclick="adj('b3',1)">+</button></div></div>
+      <div class="qty-row"><span class="d-price" id="p-b3">$60</span><div><button class="qty-btn minus" data-act="quitar" data-id="b3">−</button><span class="qty-val" id="q-b3">0</span><button class="qty-btn" data-act="sumar" data-id="b3">+</button></div></div>
     </div>
   </div>
 </section>
@@ -264,11 +264,11 @@ footer{text-align:center;padding:40px 24px;font-size:.82rem;color:var(--gris);bo
         <option value="40">Coca-Cola zero · $40</option>
         <option value="40">Coca-Cola · $40</option>
       </select>
-      <div class="qty-row"><span class="d-price">$40</span><div><button class="qty-btn minus" onclick="adj('r1',-1)">−</button><span class="qty-val" id="q-r1">0</span><button class="qty-btn" onclick="adj('r1',1)">+</button></div></div>
+      <div class="qty-row"><span class="d-price">$40</span><div><button class="qty-btn minus" data-act="quitar" data-id="r1">−</button><span class="qty-val" id="q-r1">0</span><button class="qty-btn" data-act="sumar" data-id="r1">+</button></div></div>
     </div>
     <div class="drink">
       <div><div class="d-name">Agua embotellada</div><div class="d-desc">Agua natural</div></div>
-      <div class="qty-row"><span class="d-price">$20</span><div><button class="qty-btn minus" onclick="adj('r2',-1)">−</button><span class="qty-val" id="q-r2">0</span><button class="qty-btn" onclick="adj('r2',1)">+</button></div></div>
+      <div class="qty-row"><span class="d-price">$20</span><div><button class="qty-btn minus" data-act="quitar" data-id="r2">−</button><span class="qty-val" id="q-r2">0</span><button class="qty-btn" data-act="sumar" data-id="r2">+</button></div></div>
     </div>
   </div>
 </section>
@@ -294,24 +294,24 @@ footer{text-align:center;padding:40px 24px;font-size:.82rem;color:var(--gris);bo
 <!-- CART BAR -->
 <div class="cart" id="cart">
   <div class="cart-total">Total: <span id="cartTotal">$0</span> · <span id="cartCount">0</span> productos</div>
-  <button class="order-btn" onclick="abrirModal()">Revisar pedido</button>
+  <button class="order-btn" data-act="abrir">Revisar pedido</button>
 </div>
 
 <!-- MODAL -->
 <div class="modal" id="modal">
   <div class="modal-box">
-    <button class="modal-close" onclick="cerrarModal()">×</button>
+    <button class="modal-close" data-act="cerrar">×</button>
     <h3>Tu pedido</h3>
     <ul class="pedido-lista" id="pedidoLista"></ul>
-    <button class="btn-vaciar" onclick="vaciarPedido()">🗑 Vaciar pedido</button>
+    <button class="btn-vaciar" data-act="vaciar">🗑 Vaciar pedido</button>
     <div class="pedido-total" id="pedidoTotal">$0</div>
 
     <div class="opt-label">¿Cómo quieres recibirlo?</div>
     <div class="opt-opts">
-      <div class="opt selected" onclick="selEntrega('domicilio')" id="opt-domicilio">
+      <div class="opt selected" data-act="entrega" data-val="domicilio" id="opt-domicilio">
         <span class="rad"></span><span>🛵 A domicilio (indica tu dirección, abajo)</span>
       </div>
-      <div class="opt" onclick="selEntrega('local')" id="opt-local">
+      <div class="opt" data-act="entrega" data-val="local" id="opt-local">
         <span class="rad"></span><span>🏪 Recoger en el local (Las Brisas)</span>
       </div>
     </div>
@@ -319,16 +319,16 @@ footer{text-align:center;padding:40px 24px;font-size:.82rem;color:var(--gris);bo
 
     <div class="opt-label">Forma de pago</div>
     <div class="opt-opts">
-      <div class="opt selected" onclick="selPago('efectivo')" id="opt-efectivo">
+      <div class="opt selected" data-act="pago" data-val="efectivo" id="opt-efectivo">
         <span class="rad"></span><span>💵 Efectivo contraentrega</span>
       </div>
-      <div class="opt" onclick="selPago('transferencia')" id="opt-transferencia">
+      <div class="opt" data-act="pago" data-val="transferencia" id="opt-transferencia">
         <span class="rad"></span><span>🏦 Transferencia</span>
       </div>
     </div>
     <div class="opt-info" id="pagoInfo"></div>
 
-    <button class="btn-confirmar" onclick="confirmarPedido()">Enviar pedido por WhatsApp</button>
+    <button class="btn-confirmar" data-act="confirmar">Enviar pedido por WhatsApp</button>
   </div>
 </div>
 
@@ -369,8 +369,7 @@ function render(){
   document.getElementById('cart').classList.toggle('visible', count>0);
   const b=document.getElementById('navBadge');
   b.textContent=count; b.classList.toggle('on', count>0);
-  for(const k in carrito){ document.getElementById('q-'+k).textContent=carrito[k]; }
-  // si el modal está abierto, re-renderizar la lista
+  for(const k in carrito){ const q=document.getElementById('q-'+k); if(q) q.textContent=carrito[k]; }
   if(document.getElementById('modal').classList.contains('visible')) renderPedidoLista();
 }
 function itemDetalle(k){
@@ -385,18 +384,17 @@ function renderPedidoLista(){
       html+=`<li>
               <span class="item">${NOMBRES[k]}${itemDetalle(k)}</span>
               <span class="line">
-                <button class="qty-btn minus" onclick="quitar('${k}')">−</button>
+                <button class="qty-btn minus" data-act="quitar" data-id="${k}">−</button>
                 <span class="qty-val">${carrito[k]}</span>
-                <button class="qty-btn" onclick="adj('${k}',1)">+</button>
+                <button class="qty-btn" data-act="sumar" data-id="${k}">+</button>
                 <span style="margin-left:8px;font-weight:700;color:var(--turquesa)">$${sub}</span>
-                <button class="del-btn" onclick="eliminar('${k}')" title="Eliminar">✕</button>
-                              </span>         </span>
-                            </li>`;
+                <button class="del-btn" data-act="eliminar" data-id="${k}" title="Eliminar">✕</button>
+              </span>
+            </li>`;
     }
   }
   document.getElementById('pedidoLista').innerHTML=html;
   document.getElementById('pedidoTotal').textContent='$'+totalCarrito().total;
-  // si quedó vacío, cerrar modal
   if(totalCarrito().count===0) cerrarModal();
 }
 function abrirModal(){
@@ -451,6 +449,25 @@ function confirmarPedido(){
   msg+=`*Confirmación:* por favor confirmen disponibilidad y tiempo de entrega.`;
   window.open('https://wa.me/527772111895?text='+msg,'_blank');
 }
+
+// EVENT DELEGATION: captura clicks en botones con data-act (robusto, no depende de onclick inline)
+document.addEventListener('click', function(e){
+  const btn = e.target.closest('[data-act]');
+  if(!btn) return;
+  const act = btn.getAttribute('data-act');
+  const id = btn.getAttribute('data-id');
+  if(act==='sumar') adj(id,1);
+    else if(act==='quitar') quitar(id);
+    else if(act==='eliminar') eliminar(id);
+    else if(act==='vaciar') vaciarPedido();
+    else if(act==='abrir') abrirModal();
+    else if(act==='cerrar') cerrarModal();
+    else if(act==='confirmar') confirmarPedido();
+    else if(act==='entrega') selEntrega(btn.getAttribute('data-val'));
+    else if(act==='pago') selPago(btn.getAttribute('data-val'));
+    else if(act==='scrollmenu') document.getElementById('menu').scrollIntoView();
+  });
+
 render();
 </script>
 </body>
