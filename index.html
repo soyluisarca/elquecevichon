@@ -221,9 +221,9 @@ footer{text-align:center;padding:40px 24px;font-size:.8rem;color:var(--gris);bor
   </div>
   <div class="loc-grid">
     <div class="loc">
-      <span class="ic">📍</span>
-      <div><h3>Las Brisas</h3><p>Entrada del fraccionamiento, Cuernavaca</p></div>
-    </div>
+          <span class="ic">📍</span>
+          <div><h3>Las Brisas</h3><p>Entrada al Fracc. Las Brisas, Cuernavaca</p></div>
+        </div>
     <div class="loc">
       <span class="ic">📍</span>
       <div><h3>Forum Jacarandas <span class="badge">PRONTO</span></h3><p>Próximamente</p></div>
@@ -272,7 +272,11 @@ function enviarPedido(){
       total+=carrito[k]*PRECIOS[k];
     }
   }
-  msg+=`%0A*Total: $${total}*`;
+  msg+=`%0A*Total: $${total}*%0A%0A`;
+  msg+=`*Forma de pago:*%0A`;
+  msg+=`1. Efectivo%0A`;
+  msg+=`2. Transferencia%0A%0A`;
+  msg+=`*CLABE (transferencia):*%0A722969028689169637%0A*Titular:* Brandon Valle`;
   window.open('https://wa.me/527772111895?text='+msg,'_blank');
 }
 render();
