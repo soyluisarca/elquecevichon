@@ -93,6 +93,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(251,246,237,.93);backdrop-
 .qty-btn:hover{background:var(--turquesa2)}
 .qty-btn.minus{background:var(--tinta)}
 .qty-val{font-weight:700;min-width:24px;text-align:center}
+.del-btn{width:28px;height:28px;border:none;border-radius:50%;background:#B0413E;color:#fff;font-size:.85rem;font-weight:700;cursor:pointer;margin-left:6px;flex-shrink:0}
+.del-btn:hover{background:#8f3330}
 
 /* UBICACION */
 .loc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -350,6 +352,7 @@ function adj(id, d){
   render();
 }
 function quitar(id){ adj(id,-1); }
+function eliminar(id){ carrito[id]=0; render(); }
 function vaciarPedido(){
   for(const k in carrito){ carrito[k]=0; }
   render(); cerrarModal();
@@ -380,14 +383,15 @@ function renderPedidoLista(){
     if(carrito[k]>0){
       const sub=carrito[k]*PRECIOS[k];
       html+=`<li>
-        <span class="item">${NOMBRES[k]}${itemDetalle(k)}</span>
-        <span class="line">
-          <button class="qty-btn minus" onclick="quitar('${k}')">−</button>
-          <span class="qty-val">${carrito[k]}</span>
-          <button class="qty-btn" onclick="adj('${k}',1)">+</button>
-          <span style="margin-left:8px;font-weight:700;color:var(--turquesa)">$${sub}</span>
-        </span>
-      </li>`;
+              <span class="item">${NOMBRES[k]}${itemDetalle(k)}</span>
+              <span class="line">
+                <button class="qty-btn minus" onclick="quitar('${k}')">−</button>
+                <span class="qty-val">${carrito[k]}</span>
+                <button class="qty-btn" onclick="adj('${k}',1)">+</button>
+                <span style="margin-left:8px;font-weight:700;color:var(--turquesa)">$${sub}</span>
+                <button class="del-btn" onclick="eliminar('${k}')" title="Eliminar">✕</button>
+                              </span>         </span>
+                            </li>`;
     }
   }
   document.getElementById('pedidoLista').innerHTML=html;
